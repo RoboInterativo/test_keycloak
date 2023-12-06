@@ -64,7 +64,7 @@ def hello_me():
     return ("""%s your email is %s and your user_id is %s!
                <ul>
                  <li><a href="/">Home</a></li>
-                 <li><a href="https://keycloak.robointerativo.org/realms/master/account?referrer=master&referrer_uri=http://localhost:5000/private&">Account</a></li>
+                 <li><a href="https://keycloak.robointerativo.org/realms/master/account?referrer=master&referrer_uri=http://geekslore.ru/private&">Account</a></li>
                 </ul>""" %
             (greeting, email, user_id))
 
