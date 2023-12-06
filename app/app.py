@@ -1,14 +1,14 @@
 from flask import Flask
+from keycloak.extensions.flask import AuthenticationMiddleware
+
 
 app = Flask(__name__)
 
-from keycloak.extensions.flask import AuthenticationMiddleware
 
- app = Flask(__name__)
- app.config["SECRET_KEY"] = "secret0123456789"
+app.config["SECRET_KEY"] = "secret0123456789"
 
 
- app.wsgi = AuthenticationMiddleware(
+app.wsgi = AuthenticationMiddleware(
      app.wsgi,
      app.config,
      app.session_interface,
