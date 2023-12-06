@@ -52,12 +52,12 @@ def hello_me():
         try:
             from oauth2client.client import OAuth2Credentials
             access_token = OAuth2Credentials.from_json(oidc.credentials_store[user_id]).access_token
-            print 'access_token=<%s>' % access_token
+            print ('access_token=<%s>' % access_token)
             headers = {'Authorization': 'Bearer %s' % (access_token)}
             # YOLO
             greeting = requests.get('http://localhost:8080/greeting', headers=headers).text
         except:
-            print "Could not access greeting-service"
+            print ("Could not access greeting-service")
             greeting = "Hello %s" % username
 
 
