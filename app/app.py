@@ -50,17 +50,17 @@ def hello_me():
     email = info.get('email')
     user_id = info.get('sub')
 
-    if user_id in oidc.credentials_store:
-        try:
-            from oauth2client.client import OAuth2Credentials
-            access_token = OAuth2Credentials.from_json(oidc.credentials_store[user_id]).access_token
-            print ('access_token=<%s>' % access_token)
-            headers = {'Authorization': 'Bearer %s' % (access_token)}
-            # YOLO
-            greeting = requests.get('http://geekslore.ru/greeting', headers=headers).text
-        except:
-            print ("Could not access greeting-service")
-            greeting = "Hello %s" % username
+    # if user_id in oidc.credentials_store:
+    #     try:
+    #         from oauth2client.client import OAuth2Credentials
+    #         access_token = OAuth2Credentials.from_json(oidc.credentials_store[user_id]).access_token
+    #         print ('access_token=<%s>' % access_token)
+    #         headers = {'Authorization': 'Bearer %s' % (access_token)}
+    #         # YOLO
+    #         greeting = requests.get('http://geekslore.ru/greeting', headers=headers).text
+    #     except:
+    #         print ("Could not access greeting-service")
+    #         greeting = "Hello %s" % username
 
 
     return ("""%s your email is %s and your user_id is %s!
