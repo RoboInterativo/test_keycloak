@@ -1,3 +1,4 @@
 flask
 keycloak[extensions]
 requests
+flask_oidc
