@@ -60,7 +60,7 @@ def hello_me():
     #         greeting = requests.get('http://geekslore.ru/greeting', headers=headers).text
     #     except:
     #         print ("Could not access greeting-service")
-    #         greeting = "Hello %s" % username
+    greeting = "Hello %s" % username
 
 
     return ("""%s your email is %s and your user_id is %s!
