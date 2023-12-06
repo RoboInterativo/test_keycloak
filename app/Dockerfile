@@ -7,3 +7,4 @@ WORKDIR /opt/app-root
 COPY app.py req.txt /opt/app-root
 RUN python -m venv venv
 RUN   . venv/bin/activate && pip install -r req.txt
+CMD /opt/app-root/venv/bin/flask 
