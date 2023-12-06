@@ -8,4 +8,4 @@ EXPOSE 5000
 COPY app.py req.txt /opt/app-root
 RUN python -m venv venv
 RUN   . venv/bin/activate && pip install -r req.txt
-CMD /opt/app-root/venv/bin/flask run
+CMD /opt/app-root/venv/bin/flask run -h 0.0.0.0
