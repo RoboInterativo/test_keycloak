@@ -18,12 +18,12 @@ app.wsgi = AuthenticationMiddleware(
  )
 
 
- @app.route("/howdy")
- def howdy():
+@app.route("/howdy")
+def howdy():
      return "Howdy!"
 
- @app.route("/logout")
- def logout():
+@app.route("/logout")
+def logout():
      return "User logged out!"
 
 
