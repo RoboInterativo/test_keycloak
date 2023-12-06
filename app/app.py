@@ -15,6 +15,7 @@ app.config.update({
     'TESTING': True,
     'DEBUG': True,
     'OIDC_CLIENT_SECRETS': '/opt/config/client_secrets.json',
+    'OIDC_OVERWRITE_REDIRECT_URI': 'https://geekslore.ru/authorize',
     'OIDC_ID_TOKEN_COOKIE_SECURE': False,
     'OIDC_USER_INFO_ENABLED': True,
     'OIDC_OPENID_REALM': 'master',
