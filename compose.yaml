@@ -25,7 +25,7 @@ services:
       - ./conf/options-ssl-nginx.conf:/etc/letsencrypt/options-ssl-nginx.conf
       - ./conf/site.conf:/etc/nginx/conf.d/site.conf
       - ./ssl:/etc/nginx/ssl
-      - ./secret:/opt/config
+      - ./secret/client_secrets.json:/opt/config/client_secrets.json
       # - ./well-known:/usr/share/nginx/html
       # - /opt/letsencrypt:/etc/letsencrypt
     # networks:
