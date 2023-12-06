@@ -3,5 +3,5 @@ RUN mkdir -p /opt/app-root
 RUN chown 1001:1001 -R /opt
 USER 1001
 COPY app.py req.txt /opt/app-root
-RUN pytnon -m venv /opt/app-root/venv &&\
-    . /opt/app-root/venv/bin/activate
+RUN pytnon -m venv /opt/app-root/venv
+RUN   . /opt/app-root/venv/bin/activate
