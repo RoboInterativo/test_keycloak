@@ -1,4 +1,14 @@
 services:
+  app:
+    image: myapp
+    hostname: app
+    container_name: app
+    restart: unless-stopped
+    environment:
+      TZ: "Europe/Moscow"
+    ports:
+      - 5000
+
   nginx:
     image: nginx
     hostname: nginx
