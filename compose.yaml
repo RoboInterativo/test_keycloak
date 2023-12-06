@@ -9,7 +9,7 @@ services:
     ports:
       - 5000
     volumes:
-      - ./secret/client_secrets.json:/opt/config/client_secrets.json
+      - ./secret:/opt/config
 
   nginx:
     image: nginx
