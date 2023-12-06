@@ -55,7 +55,7 @@ def hello_me():
             print ('access_token=<%s>' % access_token)
             headers = {'Authorization': 'Bearer %s' % (access_token)}
             # YOLO
-            greeting = requests.get('http://localhost:8080/greeting', headers=headers).text
+            greeting = requests.get('http://localhost:5000/greeting', headers=headers).text
         except:
             print ("Could not access greeting-service")
             greeting = "Hello %s" % username
@@ -64,7 +64,7 @@ def hello_me():
     return ("""%s your email is %s and your user_id is %s!
                <ul>
                  <li><a href="/">Home</a></li>
-                 <li><a href="//localhost:8081/auth/realms/pysaar/account?referrer=flask-app&referrer_uri=http://localhost:5000/private&">Account</a></li>
+                 <li><a href="https://keycloak.robointerativo.org/realms/master/account?referrer=master&referrer_uri=http://localhost:5000/private&">Account</a></li>
                 </ul>""" %
             (greeting, email, user_id))
 
