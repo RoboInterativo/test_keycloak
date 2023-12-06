@@ -69,12 +69,12 @@ def hello_me():
             (greeting, email, user_id))
 
 
-@app.route('/api', methods=['POST'])
-@oidc.accept_token(require_token=True, scopes_required=['openid'])
-def hello_api():
-    """OAuth 2.0 protected API endpoint accessible via AccessToken"""
-
-    return json.dumps({'hello': 'Welcome %s' % g.oidc_token_info['sub']})
+# @app.route('/api', methods=['POST'])
+# @oidc.accept_token(require_token=True, scopes_required=['openid'])
+# def hello_api():
+#     """OAuth 2.0 protected API endpoint accessible via AccessToken"""
+#
+#     return json.dumps({'hello': 'Welcome %s' % g.oidc_token_info['sub']})
 
 
 @app.route('/logout')
