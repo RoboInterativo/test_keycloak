@@ -21,6 +21,7 @@ app.config.update({
     'OIDC_SCOPES': ['openid', 'email', 'profile'],
     'OIDC_INTROSPECTION_AUTH_METHOD': 'client_secret_post'
 })
+print (app.config)
 
 oidc = OpenIDConnect(app)
 
