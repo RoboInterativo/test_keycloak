@@ -6,6 +6,7 @@ services:
     restart: unless-stopped
     environment:
       TZ: "Europe/Moscow"
+      FLASK_DEBUG: 1
     ports:
       - 5000
     volumes:
