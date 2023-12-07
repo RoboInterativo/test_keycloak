@@ -19,7 +19,7 @@ app.config.update({
     'OIDC_ID_TOKEN_COOKIE_SECURE': False,
     'OIDC_USER_INFO_ENABLED': True,
     'OIDC_OPENID_REALM': 'master',
-    'OIDC_SCOPES': ['openid', 'email', 'profile'],
+    'OIDC_SCOPES': ['openid', 'email', 'profile','roles'],
     'OIDC_INTROSPECTION_AUTH_METHOD': 'client_secret_post'
 })
 print (app.config)
@@ -50,7 +50,7 @@ def hello_me():
     email = info.get('email')
     openid = info.get('openid')
     user_id = info.get('sub')
-    profile=info.get('profile')
+    roles=info.get('roles')
 
     # if user_id in oidc.credentials_store:
     #     try:
@@ -72,7 +72,7 @@ def hello_me():
                  <li><a href="/">Home</a></li>
                  <li><a href="https://keycloak.robointerativo.org/realms/master/account?referrer=master&referrer_uri=http://geekslore.ru/private&">Account</a></li>
                 </ul>""" %
-            (greeting, email,openid,profile, user_id))
+            (greeting, email,openid,roles, user_id))
 
 
 # @app.route('/api', methods=['POST'])
