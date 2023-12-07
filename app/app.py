@@ -48,6 +48,7 @@ def hello_me():
 
     username = info.get('preferred_username')
     email = info.get('email')
+    openid = info.get('openid')
     user_id = info.get('sub')
 
     # if user_id in oidc.credentials_store:
@@ -64,11 +65,12 @@ def hello_me():
 
 
     return ("""%s your email is %s and your user_id is %s!
+                  <p>%s</p>
                <ul>
                  <li><a href="/">Home</a></li>
                  <li><a href="https://keycloak.robointerativo.org/realms/master/account?referrer=master&referrer_uri=http://geekslore.ru/private&">Account</a></li>
                 </ul>""" %
-            (greeting, email, user_id))
+            (greeting, email,openid, user_id))
 
 
 # @app.route('/api', methods=['POST'])
