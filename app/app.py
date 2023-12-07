@@ -50,6 +50,7 @@ def hello_me():
     email = info.get('email')
     openid = info.get('openid')
     user_id = info.get('sub')
+    profile=info.get('profile')
 
     # if user_id in oidc.credentials_store:
     #     try:
@@ -61,16 +62,17 @@ def hello_me():
     #         greeting = requests.get('http://geekslore.ru/greeting', headers=headers).text
     #     except:
     #         print ("Could not access greeting-service")
-    greeting = "Hello %s" % username
+    greeting = "Hello %s " % username
 
 
     return ("""%s your email is %s and your user_id is %s!
+                  <p>%s</p>
                   <p>%s</p>
                <ul>
                  <li><a href="/">Home</a></li>
                  <li><a href="https://keycloak.robointerativo.org/realms/master/account?referrer=master&referrer_uri=http://geekslore.ru/private&">Account</a></li>
                 </ul>""" %
-            (greeting, email,openid, user_id))
+            (greeting, email,openid,profile, user_id))
 
 
 # @app.route('/api', methods=['POST'])
